@@ -4,6 +4,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import { useState,useEffect } from "react";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Biblestudy from './JSON/biblestudy2024.json'
+import { StatusBar } from "expo-status-bar";
 const BibleStudy = ({ navigation }) => {
     const [bibledata, setBibleData] = useState(Biblestudy);
     const [getvalue, setGetValue] = useState("");
@@ -21,6 +22,7 @@ const BibleStudy = ({ navigation }) => {
 
     return (
         <View className="bg-green-950 w-screen h-full flex">
+            <StatusBar/>
             <View className="bg-yellow-500 h-20 w-screen flex justify-end pb-2">
                 <Text className="text-green-900 font-bold text-3xl text-center">The Christian Race</Text>
             </View>

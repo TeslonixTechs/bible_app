@@ -1,6 +1,7 @@
 import { View,Text, ScrollView, TouchableOpacity } from "react-native";
 import Biblestudy from './JSON/biblestudy2024.json'
 import { useEffect, useState } from "react";
+import { StatusBar } from 'expo-status-bar'
 import Icon from 'react-native-vector-icons/FontAwesome';
 const BibleGuide = ({navigation ,route})=>{
 const { params } = route;
@@ -43,6 +44,7 @@ if(count===1){
 }
     return( 
         <View className="h-full w-screen flex bg-green-900">
+            <StatusBar/>
             <View className="bg-yellow-500 h-20  w-screen flex justify-end pb-2">
                 <Text className="text-green-900 font-bold text-3xl text-center">The Christain Race</Text>
            </View>

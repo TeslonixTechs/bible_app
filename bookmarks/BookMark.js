@@ -3,12 +3,14 @@ import { Text, TouchableOpacity, View,ScrollView } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
 import Icon from 'react-native-vector-icons/FontAwesome';
 import CreateTable from "./services/createtable";
+import { StatusBar } from "expo-status-bar";
 const BookMark = ({navigation}) => {
     useEffect(()=>{
         CreateTable()
     },[])
   return (
     <View className="flex h-full w-screen bg-green-900">
+        <StatusBar/>
         <View className="bg-yellow-500 h-16 w-screen flex justify-end pb-2">
                 <Text className="text-green-900 font-bold text-2xl text-center">Favourite Verses</Text>
         </View>

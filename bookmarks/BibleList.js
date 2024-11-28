@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Image, View, TextInput, ScrollView, Text, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Biblelist from './JSON/Biblelist.json';
+import { StatusBar } from 'expo-status-bar'
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const BibleList = ({ navigation }) => {
@@ -22,7 +23,8 @@ const BibleList = ({ navigation }) => {
   }, [getvalue]);
 
   return (
-    <SafeAreaView className="flex bg-slate-100 h-full w-screen">
+    <View className="flex bg-slate-100 h-full w-screen">
+      <StatusBar/>
       <View className="h-44 pl-3 gap-4 px-5 pt-7 bg-slate-100 flex w-screen">
         <View className="flex flex-row gap-1 pl-3 text-3xl justify-start w-screen items-center font-normal">
           <Image resizeMode="contain" className="w-12 h-12" source={require('./Images/download (1).png')} />
@@ -47,7 +49,7 @@ const BibleList = ({ navigation }) => {
         </TouchableOpacity>
         <Icon onPress={() => navigation.navigate("Page")} name="home" color="orange" size={60} />
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 

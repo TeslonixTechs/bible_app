@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import books from './JSON/Bibleverse.json';
 import Biblelist from './JSON/Biblelist.json';
+import { StatusBar } from 'expo-status-bar';
 
 const BibleChapter = ({ navigation, route }) => {
     const { params } = route;
@@ -146,7 +147,8 @@ const BibleChapter = ({ navigation, route }) => {
     };
 
     return (
-        <SafeAreaView className="flex justify-center h-full w-screen bg-slate-100">
+        <View className="flex justify-center h-full w-screen bg-slate-100">
+            <StatusBar/>
             <View className="flex justify-center h-fit pb-5 items-center w-screen">
                 <View className="flex flex-row w-screen justify-center gap-4 items-center">
                     <TouchableOpacity className="bg-amber-600 flex justify-center items-center rounded-full h-10 w-10" onPress={handleLeftArrowClick}><Icon name="arrow-left" size={27} color="#fff" /></TouchableOpacity>
@@ -188,7 +190,7 @@ const BibleChapter = ({ navigation, route }) => {
                 </TouchableOpacity>
                 <Icon onPress={() => navigation.navigate("Page")} name="home" color="orange" size={60} />
             </View>
-        </SafeAreaView>
+        </View>
     );
 };
 

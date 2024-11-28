@@ -3,6 +3,7 @@ import { SafeAreaView } from "react-native-safe-area-context"
 import books from './JSON/Bibleverse.json'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useState,useEffect } from "react"
+import { StatusBar } from "expo-status-bar";
 const SearchVerse = ({navigation,route})=>{
     const { params } = route;
     const book = params?.book;
@@ -72,7 +73,8 @@ const handlecountminus=()=>{
   }
 }
   return (
-    <SafeAreaView className="h-full flex w-screen">
+    <View className="h-full flex w-screen">
+      <StatusBar/>
       <View className="w-screen py-7 items-center">
       <View className="bg-green-950 h-14 w-64 rounded-xl flex justify-center items-center"><Text className="text-3xl text-white font-bold">{book}</Text></View>
       </View>
@@ -88,7 +90,7 @@ const handlecountminus=()=>{
         </View>
       ))}
     </ScrollView>
-    <View className="flex flex-row gap-3 w-screen h-fit py-2 items-center justify-center ">
+    <View className="flex flex-row gap-3 w-screen h-fit items-center justify-center ">
       <TouchableOpacity className=" items-center bg-amber-500 h-10 rounded-xl w-10 flex justify-center" onPress={handlecountminus}><Icon name="minus" size={25} /></TouchableOpacity>
       <View className="flex justify-center w-fit items-center h-fit gap-1"><Text className="text-lg">fontsize</Text><Text className="text-3xl">{count}</Text></View>
       <TouchableOpacity onPress={handlecountplus} className=" items-center bg-amber-500 h-10 rounded-xl w-10 flex justify-center"><Icon name="plus" size={25} /></TouchableOpacity>
@@ -99,7 +101,7 @@ const handlecountminus=()=>{
         </TouchableOpacity>
         <Icon onPress={() => navigation.navigate("Page")} name="home" color="orange" size={60} />
     </View>
-    </SafeAreaView>
+    </View>
   )
 }
 export default SearchVerse

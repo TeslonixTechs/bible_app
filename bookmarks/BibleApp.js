@@ -11,9 +11,9 @@ const BibleApp = ({navigation})=>{
         gotopage()
     },[])
     return(
-        <SafeAreaView>
+        <View>
             <Image resizeMode="contain" source={require('./Images/mybg.jpg')} className="w-screen h-full" />
-        </SafeAreaView>
+        </View>
     )
 }
 export default BibleApp
